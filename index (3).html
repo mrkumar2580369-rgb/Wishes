@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise For My Love ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    color:white;
+    text-align:center;
+}
+
+.container{
+    width:90%;
+    max-width:700px;
+}
+
+.hidden{
+    display:none;
+}
+
+h1{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.bouquet{
+    font-size:120px;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+.bouquet:hover{
+    transform:scale(1.1);
+}
+
+.cake{
+    font-size:140px;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+.cake:hover{
+    transform:scale(1.1);
+}
+
+button{
+    padding:12px 30px;
+    border:none;
+    border-radius:40px;
+    font-size:20px;
+    margin:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.yes{
+    background:white;
+    color:#ff4d6d;
+    font-weight:bold;
+}
+
+.no{
+    background:black;
+    color:white;
+    position:absolute;
+}
+
+.message{
+    font-size:24px;
+    line-height:1.8;
+    margin-top:20px;
+}
+
+.finalMessage{
+    font-size:24px;
+    line-height:1.8;
+    padding:20px;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px white;
+    }
+    to{
+        text-shadow:0 0 25px yellow;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Step 1 -->
+    <div id="step1">
+        <h1>💐 Birthday Surprise 💐</h1>
+        <p>Instructions: Click on the Flower Bouquet 🌸</p>
+        <div class="bouquet" onclick="showCake()">💐</div>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="step2" class="hidden">
+        <h1>🎂 Happy Birthday 🎂</h1>
+        <p>Instructions: Click on the Candle 🕯️</p>
+        <div class="cake" onclick="showWish()">🎂</div>
+    </div>
+
+    <!-- Step 3 -->
+    <div id="step3" class="hidden">
+        <div class="message">
+            ❤️ Happy Birthday To You My Beautiful Lady ❤️ <br><br>
+
+            I wish God will give you everything with more prettiest wishes 🌸✨
+        </div>
+
+        <br><br>
+
+        <h2>Are You Happy Dear? 🥺</h2>
+
+        <button class="yes" onclick="showLoveQuestion()">Yes ❤️</button>
+        <button class="no" id="happyNo">No 😜</button>
+    </div>
+
+    <!-- Step 4 -->
+    <div id="step4" class="hidden">
+        <h2>Do You Love Me? ❤️</h2>
+
+        <button class="yes" onclick="showFinalLove()">Yes 🫂</button>
+        <button class="no" id="loveNo">No 😆</button>
+    </div>
+
+    <!-- Step 5 -->
+    <div id="step5" class="hidden">
+        <div class="message">
+            ❤️ Mujhe pata tha ji ❤️ <br>
+            I Love You Too So Much 🫂🫂
+        </div>
+
+        <br><br>
+
+        <button class="yes" onclick="showBigMessage()">Next 💖</button>
+    </div>
+
+    <!-- Final Message -->
+    <div id="finalStep" class="hidden">
+        <div class="finalMessage">
+
+            ❤️ Happy Birthday to the most beautiful part of my life ❤️ <br><br>
+
+            You are not just my love, you are my peace, my happiness, and my biggest blessing. <br>
+            Every moment with you feels special, and every smile of yours makes my world brighter ✨ <br><br>
+
+            I pray that God fills your life with endless happiness, success, love, and all the beautiful things you truly deserve 🌸 <br>
+            No matter how many birthdays come, my love for you will always grow stronger. <br><br>
+
+            And remember one thing forever — <br>
+            among billions of people in this world, my heart chose only you ❤️🫂
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+function showCake(){
+    document.getElementById("step1").classList.add("hidden");
+    document.getElementById("step2").classList.remove("hidden");
+}
+
+function showWish(){
+    document.getElementById("step2").classList.add("hidden");
+    document.getElementById("step3").classList.remove("hidden");
+}
+
+function showLoveQuestion(){
+    document.getElementById("step3").classList.add("hidden");
+    document.getElementById("step4").classList.remove("hidden");
+}
+
+function showFinalLove(){
+    document.getElementById("step4").classList.add("hidden");
+    document.getElementById("step5").classList.remove("hidden");
+}
+
+function showBigMessage(){
+    document.getElementById("step5").classList.add("hidden");
+    document.getElementById("finalStep").classList.remove("hidden");
+}
+
+function moveButton(id){
+    const button = document.getElementById(id);
+
+    button.addEventListener("mouseover", () => {
+
+        const x = Math.random() * (window.innerWidth - 120);
+        const y = Math.random() * (window.innerHeight - 80);
+
+        button.style.left = x + "px";
+        button.style.top = y + "px";
+    });
+}
+
+moveButton("happyNo");
+moveButton("loveNo");
+
+</script>
+
+</body>
+</html>
